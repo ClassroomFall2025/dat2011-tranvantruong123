@@ -69,15 +69,15 @@ class QuanLySinhVien:
                 sales = float(input("Điểm Sales: "))
                 sv = SinhVienBiz(ten, marketing, sales)
             else:
-                print("❌ Loại sinh viên không hợp lệ!")
+                print(" Loại sinh viên không hợp lệ!")
                 continue
 
             self.danh_sach.append(sv)
-            print("✅ Đã thêm sinh viên thành công!")
+            print("Đã thêm sinh viên thành công!")
 
     def xuat_ds(self):
         if not self.danh_sach:
-            print("⚠️ Danh sách trống.")
+            print("Danh sách trống.")
             return
         print("\n=== DANH SÁCH SINH VIÊN ===")
         for sv in self.danh_sach:
@@ -86,7 +86,7 @@ class QuanLySinhVien:
     def xuat_sv_gioi(self):
         ds_gioi = [sv for sv in self.danh_sach if sv.get_hoc_luc() == "Giỏi"]
         if not ds_gioi:
-            print("⚠️ Không có sinh viên giỏi.")
+            print(" Không có sinh viên giỏi.")
             return
         print("\n=== SINH VIÊN GIỎI ===")
         for sv in ds_gioi:
@@ -94,5 +94,4 @@ class QuanLySinhVien:
 
     def sap_xep_theo_diem(self):
         self.danh_sach.sort(key=lambda sv: sv.get_diem(), reverse=True)
-        print("✅ Đã sắp xếp danh sách theo điểm giảm dần.")
-
+        print("Đã sắp xếp danh sách theo điểm giảm dần.")
